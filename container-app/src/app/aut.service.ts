@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AutService {
+export class AuthService {
+  private isLoggedIn = false;
 
-  constructor() { }
+  login() {
+    this.isLoggedIn = true;
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+  }
+
+  getAuthStatus(): boolean {
+    return this.isLoggedIn;
+  }
 }

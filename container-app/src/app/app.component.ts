@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./navbar/navbar.component";
+import { CommonModule } from '@angular/common'; // Import nécessaire pour ngIf
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  standalone: true, // Déclare que le composant est autonome
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [CommonModule, NavbarComponent], // Ajoute CommonModule pour *ngIf
 })
 export class AppComponent {
-  title = 'container-app';
+[x: string]: any;
+  isLoggedIn = false; // Gère l'état de connexion
 }
