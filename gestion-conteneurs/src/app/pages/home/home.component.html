@@ -1,0 +1,21 @@
+<div class="welcome-container">
+  <h1>Bienvenue</h1>
+</div>
+
+<div class="button-container">
+  <!-- Ligne supérieure : Création d'un projet et Consulter les conteneurs -->
+  <div class="button-row">
+    <button class="custom-button">Création d'un projet</button>
+    <button class="custom-button" (click)="navigateToContainers()">Consulter les conteneurs</button>
+  </div>
+
+  <!-- Historique (centré) -->
+  <div class="button-row">
+    <button class="custom-button">Historique</button>
+  </div>
+
+  <!-- Description du projet -->
+  <div class="button-row">
+    <button class="custom-button" (click)="navigateToDescription()">Description du projet</button> <!-- Ajout du (click) ici -->
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<h1 class="title">Consulter les conteneurs</h1>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Connexion</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows; index as i">
+        <td><input [(ngModel)]="row.name" /></td>
+        <td><input [(ngModel)]="row.date" /></td>
+        <td><input [(ngModel)]="row.status" /></td>
+        <td><input [(ngModel)]="row.connection" /></td>
+        <td>
+          <button (click)="deleteRow(i)">Supprimer</button>
+          <button (click)="restartRow(i)">Redémarrer</button>
+          <button (click)="viewLogs(i)">Logs</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Bouton "Ajouter" en dessous de la dernière ligne -->
+  <button *ngIf="rows.length > 0" (click)="addRow()">Ajouter un conteneur</button>
+</div>
